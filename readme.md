@@ -265,7 +265,7 @@ SECURITY SUMMARY:
 ------------------------------  
 HIGH: 2 findings
 MEDIUM: 1 findings
-
+...
 
 # ⚖️ Legal & Ethical Guidelines
 
