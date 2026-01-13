@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 # Make tools executable
 chmod +x *.py
-
+```
 
 🔧 Tool Details & Usage
 
@@ -55,7 +55,7 @@ b.Content limiting: 2000 characters max
 c.User-agent rotation to avoid detection
 d.SSL certificate verification
 e.Configurable rate limiting
-
+````
 Usage:
 # Basic scan
 python admin_detector.py https://example.com
@@ -68,7 +68,7 @@ python admin_detector.py https://target.com --output report.json
 
 # Rate limited scanning (0.5 req/sec)
 python admin_detector.py https://target.com --rate-limit 0.5
-
+````
 Output Example:
 
 🔍 ADMIN PANEL DETECTION REPORT
@@ -92,6 +92,7 @@ c.5-second timeout protection
 d.Stops at 401/403 responses
 e.No response body storage
 
+````
 Usage:
 # Single target
 python3 actuator_scanner.py https://example.com
@@ -101,7 +102,7 @@ python3 actuator_scanner.py https://app1.com https://app2.com
 
 # Custom timeout with verbose mode
 python3 actuator_scanner.py https://example.com --timeout 10 --max-size 2048 -v
-
+````
 Risk Classifications:
 
 🔒 Secure: No exposed endpoints
@@ -124,7 +125,7 @@ d.No content parsing or analysis
 e.Header-only risk assessment
 
 Target Files: .env, .git/config, backup.zip, config.yml, database.sql
-
+````
 Usage:
 
 # Basic scan
@@ -135,7 +136,7 @@ python3 sensitive_scanner.py https://api.example.com --timeout 15
 
 # Save report to file
 python3 sensitive_scanner.py https://example.com --output scan_report.txt
-
+````
 Output Format:
 
 🚨 CRITICAL: .env file exposed at https://example.com/.env
@@ -155,7 +156,7 @@ a.Only tests: No auth header vs Invalid token
 b.No parameter fuzzing or manipulation
 c.No response data extraction
 d.Stops immediately on auth bypass confirmation
-
+````
 Usage:
 # Test single endpoint
 python api_auth_scanner.py -u https://api.example.com/users
@@ -165,7 +166,7 @@ python api_auth_scanner.py -u https://api.example.com/users https://api.example.
 
 # Save results to JSON
 python api_auth_scanner.py -u https://api.example.com/admin -o results.json
-
+````
 Severity Ratings:
 
 🚨 CRITICAL: 200 response without auth (full access)
@@ -186,7 +187,7 @@ b.Service identification via headers/titles/content patterns
 c.Athentication requirement detection
 d.Multi-threaded concurrent scanning
 e.No data queries, searches, or metric access
-
+````
 Usage:
 # Single target
 python cloud_detector.py https://grafana.example.com
@@ -199,7 +200,7 @@ python cloud_detector.py -f targets.txt -o json
 
 # Custom workers and timeout
 python cloud_detector.py -t 10 -w 20 https://kibana.example.com
-
+````
 Risk Classification:
 🚨 CRITICAL: No auth required, full access
 ⚠️ HIGH: Weak auth or default credentials
@@ -224,14 +225,15 @@ Missing HSTS (protocol downgrade)
 Insecure CORS (wildcard origins)
 Cookie security (HttpOnly/Secure flags)
 Information disclosure (technology fingerprinting)
-
+````
 Usage:
 # Basic analysis
 python3 security_header_analyzer.py https://example.com
 
 # JSON output with SSL verification
 python3 security_header_analyzer.py https://example.com --json --verify-ssl
-
+````
+````
 # Batch processing script
 #!/bin/bash
 while read url; do
@@ -239,7 +241,7 @@ while read url; do
     python3 security_header_analyzer.py "$url" >> security_report.txt
     echo "----------------------------------------" >> security_report.txt
 done < urls.txt
-
+````
 Sample Output:
 
 ================================================================================
