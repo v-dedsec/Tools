@@ -242,6 +242,7 @@ while read url; do
     echo "----------------------------------------" >> security_report.txt
 done < urls.txt
 ````
+````
 Sample Output:
 
 ================================================================================
@@ -267,7 +268,7 @@ SECURITY SUMMARY:
 ------------------------------  
 HIGH: 2 findings
 MEDIUM: 1 findings
-
+````
 
 # ⚖️ Legal & Ethical Guidelines
 
